@@ -8,6 +8,27 @@
   border: $width $style $color;
 }
 
+// button default
+@mixin button($iconName, $background-color, $color, $hover) {
+  width: 100%;
+  padding: 0.7rem 0.5rem 0.1rem 0.5rem;
+  @extend %font-bold;
+  background-color: $background-color;
+  color: $color;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover;
+  }
+  @include tablet {
+    width: 10rem;
+  }
+}
+
 // flexbox
 @mixin flex($flex-direction, $align-items, $justify-content) {
   display: flex;
