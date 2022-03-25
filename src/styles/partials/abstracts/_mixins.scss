@@ -1,0 +1,46 @@
+@use "./variables" as *;
+// borders
+@mixin border-position($direction, $width, $style, $color) {
+  border-#{$direction}: $width $style $color;
+}
+
+@mixin border-all($width, $style, $color) {
+  border: $width $style $color;
+}
+
+// flexbox
+@mixin flex($flex-direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin flex-direction($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
+
+// larger displays
+@mixin wrap($max-width, $margin) {
+  max-width: $max-width;
+  margin: $margin;
+}
+
+@mixin full-width($color) {
+  width: 100%;
+  background: $color;
+}
+
+// responsive design
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
