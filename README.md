@@ -5,7 +5,7 @@
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installing](#installing)
-- [Live](#live)
+<!-- - [Live](#live) -->
 - [Authors](#authors)
 
 ### Features
