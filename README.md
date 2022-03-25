@@ -5,7 +5,6 @@
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installing](#installing)
-<!-- - [Live](#live) -->
 - [Authors](#authors)
 
 ### Features
@@ -25,11 +24,6 @@
 - Download this Repository or clone it: `git@github.com:aramatsolrac/recommender-system.git`
 - `cd` into the new folder and type `npm install`
 - To run the React project type: `npm start`
-
-### Live
-
-<!-- - <a href="" target="\_blank">Recommender System</a>
-- <a href="" target="\_blank">Recommender System API</a> -->
 
 ### Authors
 
