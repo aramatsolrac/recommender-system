@@ -22,7 +22,7 @@
 
 ### Installing
 
-- Download this Repository or clone it: ``
+- Download this Repository or clone it: `git@github.com:aramatsolrac/recommender-system.git`
 - `cd` into the new folder and type `npm install`
 - To run the React project type: `npm start`
 
