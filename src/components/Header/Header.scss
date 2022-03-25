@@ -1,1 +1,48 @@
 @import "./../../styles/partials/global";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &__buttons {
+    width: 100%;
+    @include flex(row, center, space-between);
+    &-back {
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      &::before {
+        content: url("./../../assets/images/icons/arrow-back.svg");
+      }
+    }
+    &-skip {
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      color: $color-secondary;
+    }
+  }
+  &__title {
+    font-size: 1.6875rem;
+    text-align: left;
+    padding: 1rem 0;
+    &-highlight {
+      color: $color-secondary;
+    }
+  }
+  &__progress {
+    width: 100%;
+    @include flex(row, center, space-between);
+    &-bar {
+      accent-color: $color-secondary;
+      width: 90%;
+    }
+    &-number {
+      font-size: 0.9rem;
+      color: $color-grey;
+    }
+  }
+}
