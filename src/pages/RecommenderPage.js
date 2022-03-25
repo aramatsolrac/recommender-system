@@ -1,15 +1,10 @@
 import "./RecommenderPage.scss";
 import { Component } from "react";
-import "../components/Form/Form.scss";
 import axios from "axios";
-
-// import axios from "axios";
 import Header from "../components/Header/Header";
 import Button from "../components/Button/Button";
 const PORT = "8080";
 const apiURL = `http://localhost:${PORT}`;
-
-// const baseURL = process.env.REACT_APP_API_URL;
 
 class RecommenderPage extends Component {
   constructor(props) {
@@ -25,21 +20,25 @@ class RecommenderPage extends Component {
       Q5: "",
       Q6: "",
     };
+    this.fetchData = this.fetchData.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBack = this.handleBack.bind(this);
   }
   fetchData() {
     let call = "";
 
     if (this.state.question === 1) {
       call = "first";
-    } else if (this.question === 2) {
+    } else if (this.state.question === 2) {
       call = "second";
-    } else if (this.question === 3) {
+    } else if (this.state.question === 3) {
       call = "third";
-    } else if (this.question === 4) {
+    } else if (this.state.question === 4) {
       call = "fourth";
-    } else if (this.question === 5) {
+    } else if (this.state.question === 5) {
       call = "fifth";
-    } else if (this.question === 6) {
+    } else if (this.state.question === 6) {
       call = "sixth";
     }
 
@@ -57,19 +56,21 @@ class RecommenderPage extends Component {
   }
 
   handleSkip = () => {
-    this.props.history.push("/"); // push to the  'https://stornename.myshopify.com/admin'
+    this.props.history.push("/");
   };
 
-  handleNext(e) {
+  handleNext = (e) => {
     e.preventDefault();
+    console.log(e);
     this.setState({
-      [`Q${this.state.question}`]: e.option.name,
-      question: this.prevState.question + 1,
+      // [`Q${this.state.question}`]: e.option.name,
+      question: (this.state.question += 1),
     });
     console.log(this.state.Q1);
     console.log(this.state.question);
-    this.fetchData();
-  }
+    setTimeout(this.fetchData, 2000);
+    // this.fetchData();
+  };
   handleSubmit(e) {
     console.log(e);
     const answers = {
@@ -91,9 +92,9 @@ class RecommenderPage extends Component {
       });
   }
   handleBack() {
-    // this.setState({
-    //   question: prevState.question - 1,
-    // });
+    this.setState({
+      question: this.tate.question - 1,
+    });
     console.log(this.state.question);
     this.fetchData();
   }
@@ -102,38 +103,37 @@ class RecommenderPage extends Component {
     return (
       <>
         <Header handleBack={this.handleBack} handleSkip={this.handleSkip} />
-        <form className="app-form">
+        <form className="app-form" onSubmit={this.handleNext}>
           <label className="app-form__question">
             {this.state.questionTitle}
-            <select
-              className="app-form__responses"
-              defaultValue="select"
-            ></select>
-            <option
-              className="app-form__responses--select"
-              name="select"
-              disabled=""
-            >
-              Please select
-            </option>
-            {this.state.options &&
-              this.state.options.map((option, index) => {
-                return (
-                  <option
-                    className="app-form__responses--select"
-                    name={option}
-                    key={index}
-                  >
-                    {option}
-                  </option>
-                );
-              })}
+            <select className="app-form__responses" defaultValue="select">
+              <option
+                className="app-form__responses--select"
+                name="select"
+                disabled=""
+              >
+                Select
+              </option>
+              {this.state.options &&
+                this.state.options.map((option, index) => {
+                  return (
+                    <option
+                      className="app-form__responses--select"
+                      name={option}
+                      value={option}
+                      key={index}
+                    >
+                      {option}
+                    </option>
+                  );
+                })}
+            </select>
           </label>
           <div className="footer">
-            <h2 className="footer__name">shopify</h2>
+            <h2 className="app-form__name">shopify</h2>
             <Button
               children="Next"
-              className="footer__button"
+              className="app-form__button"
               type="button"
               onClick={this.handleNext}
             />
