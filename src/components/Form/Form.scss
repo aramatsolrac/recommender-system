@@ -1,1 +1,8 @@
 @import "./../../styles/partials/global";
+
+.app-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    width: 100%;
+}
