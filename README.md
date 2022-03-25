@@ -34,5 +34,5 @@
 ### Authors
 
 - Artrell Coker [@####](https://github.com/#######)
-- Marcos Iturriaga [@####](https://github.com/o77Oo)
+- Marcos Iturriaga [@marcositu6](https://github.com/marcositu6)
 - Tamara Carlos [@aramatsolrac](https://github.com/aramatsolrac)
