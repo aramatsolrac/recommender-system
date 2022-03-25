@@ -33,6 +33,6 @@
 
 ### Authors
 
-- Artrell Coker [@Trellson](https://github.com/Trellson
+- Artrell Coker [@Trellson](https://github.com/Trellson)
 - Marcos Iturriaga [@marcositu6](https://github.com/marcositu6)
 - Tamara Carlos [@aramatsolrac](https://github.com/aramatsolrac)
