@@ -28,8 +28,8 @@
 
 ### Live
 
-- <a href="" target="\_blank">Recommender System</a>
-- <a href="" target="\_blank">Recommender System API</a>
+<!-- - <a href="" target="\_blank">Recommender System</a>
+- <a href="" target="\_blank">Recommender System API</a> -->
 
 ### Authors
 
