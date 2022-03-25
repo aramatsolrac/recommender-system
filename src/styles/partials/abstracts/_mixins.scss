@@ -8,6 +8,23 @@
   border: $width $style $color;
 }
 
+// button default
+@mixin button($background-color, $color, $hover) {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: $background-color;
+  color: $color;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-left: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover;
+  }
+}
+
 // flexbox
 @mixin flex($flex-direction, $align-items, $justify-content) {
   display: flex;
